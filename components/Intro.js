@@ -1,5 +1,6 @@
-import { StyleSheet, Text, View, Image } from "react-native";
+import { StyleSheet, Text, View } from "react-native";
 import IntroPoppup from "./poppup/IntroPoppup";
+import IntroIcon from "../assets/intro.svg";
 
 const Intro = props => {
   const { btnClick } = props;
@@ -14,14 +15,8 @@ const Intro = props => {
         <Text style={stlIntro.subheader}>&quot;Pixel Perfect&quot;</Text>
       </View>
       <View style={stlIntro.iconWrapper}>
-        <Image
-          source={{
-            uri: "https://www.nicepng.com/png/full/870-8707419_755-x-680-11-web-design-website-clip.png",
-          }}
-          style={stlIntro.icon}
-        />
+        <IntroIcon />
       </View>
-      <View></View>
       <IntroPoppup btnClick={btnClick} />
     </View>
   );
@@ -32,15 +27,14 @@ export default Intro;
 const stlIntro = StyleSheet.create({
   wrapper: {
     flex: 1,
-    backgroundColor: "#ffcc33",
     alignItems: "center",
     justifyContent: "space-between",
-    padding: 10,
   },
 
   headerWrapper: {
     justifyContent: "center",
     alignItems: "center",
+    marginTop: 21,
   },
 
   header: {
@@ -69,12 +63,13 @@ const stlIntro = StyleSheet.create({
   iconWrapper: {
     justifyContent: "center",
     alignItems: "center",
-    width: "100%",
+    flexDirection: "row",
+    paddingHorizontal: 45,
   },
 
   icon: {
-    width: "100%",
-    height: 350,
-    // flex: 1,
+    resizeMode: "contain",
+    flex: 1,
+    aspectRatio: 1,
   },
 });

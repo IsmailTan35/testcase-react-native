@@ -10,7 +10,7 @@ const Navbar = () => {
       <View style={stlNavbar.container}>
         <View style={stlNavbar.header}>
           <Text style={stlNavbar.header1}>TestCase</Text>
-          <Text style={stlNavbar.header2}>App</Text>
+          <Text style={stlNavbar.header2}>APP</Text>
         </View>
         <View style={stlNavbar.pointsWrapper}>
           <Text style={stlNavbar.pointsText}>Points:</Text>
@@ -25,19 +25,20 @@ export default Navbar;
 
 const stlNavbar = StyleSheet.create({
   wrapper: {
-    height: 68,
-    background: "#ffcc33",
-    padding: 10,
+    padding: 16,
+    flexDirection: "row",
   },
   container: {
     flexDirection: "row",
     justifyContent: "space-between",
     flex: 1,
   },
+
   header: {
     flexDirection: "row",
     justifyContent: "center",
     alignItems: "center",
+    flexBasis: "auto",
   },
   header1: {
     fontFamily: "MontserratBold",
@@ -46,12 +47,13 @@ const stlNavbar = StyleSheet.create({
     lineHeight: 24,
   },
   header2: {
-    marginLeft: 8,
+    marginLeft: 5,
     fontFamily: "MontserratBlack",
     fontStyle: "normal",
     fontSize: 20,
     lineHeight: 24,
   },
+
   pointsWrapper: {
     backgroundColor: "black",
     flexDirection: "row",
@@ -69,11 +71,11 @@ const stlNavbar = StyleSheet.create({
     color: "white",
   },
   points: {
-    fontFamily: "QuicksandMedium",
+    fontFamily: "QuicksandBold",
     fontStyle: "normal",
     fontSize: 14,
     lineHeight: 20,
     color: "white",
-    marginLeft: 10,
+    marginLeft: 5,
   },
 });

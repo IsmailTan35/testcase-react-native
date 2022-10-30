@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { View, Image, Text, StyleSheet } from "react-native";
+import { countDivider } from "../../services";
 
 const EarnPoppup = props => {
   const { data, btnClick } = props;
@@ -17,11 +18,11 @@ const EarnPoppup = props => {
             alt={data.title}
             style={stlEarnPoppup.icon}
           />
-          <Text style={{ color: "#00CC00" }}>{data.point} Points</Text>
-          <Text style={stlEarnPoppup.header}>{data.title}</Text>
-          <Text style={stlEarnPoppup.content}>
-            Lorem ipsum dolor sit amet consectetur
+          <Text style={stlEarnPoppup.points}>
+            {countDivider(data.point)} Points
           </Text>
+          <Text style={stlEarnPoppup.header}>{data.title}</Text>
+          <Text style={stlEarnPoppup.content}>{data.description}</Text>
           <View
             className="poppup-button-wrapper"
             style={stlEarnPoppup.buttonWrapper}
@@ -46,7 +47,7 @@ const stlEarnPoppup = StyleSheet.create({
   wrapper: {
     justifyContent: "center",
     alignItems: "center",
-    padding: 10,
+    padding: 16,
     width: "100%",
     flexDirection: "column",
   },
@@ -54,19 +55,28 @@ const stlEarnPoppup = StyleSheet.create({
     backgroundColor: "white",
     flexDirection: "column",
     alignItems: "flex-start",
-    padding: 16,
-    shadowColor: "rgba(0,0,0,0.15)",
-    shadowOffset: { width: 4, height: 1 },
-    shadowOpacity: 0.15,
-    shadowRadius: 1,
     borderRadius: 16,
     shadowColor: "#000",
-
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+    shadowOpacity: 0.4,
+    shadowRadius: 3.84,
+    elevation: 5,
     width: "100%",
   },
   icon: {
     width: 72,
     height: 72,
+  },
+  points: {
+    fontFamily: "MontserratBold",
+    fontStyle: "normal",
+    fontSize: 14,
+    lineHeight: 18,
+    marginVertical: 8,
+    color: "#00CC00",
   },
   header: {
     fontFamily: "QuicksandBold",
@@ -86,7 +96,7 @@ const stlEarnPoppup = StyleSheet.create({
     width: "100%",
     justifyContent: "center",
     alignItems: "center",
-    marginTop: 10,
+    marginTop: 32,
   },
   button: {
     textAlign: "center",

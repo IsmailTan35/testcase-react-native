@@ -8,14 +8,12 @@ const CongratulationsPoppup = props => {
     <View style={{ position: "absolute", ...stlCongsPoppup.wrapper }}>
       <View style={stlCongsPoppup.container}>
         <View style={stlCongsPoppup.wrapper}>
-          <View>
-            <CongIcon width={120} height={40} />
+          <View style={stlCongsPoppup.icon}>
+            <CongIcon />
           </View>
           <Text style={stlCongsPoppup.header}>Congratulations!</Text>
           <Text style={stlCongsPoppup.content}>
-            {
-              "You've earned points for your participation! Keep Up the great work!."
-            }
+            You've earned points for your participation! Keep Up the great work!
           </Text>
           <View style={stlCongsPoppup.buttonWrapper}>
             <Text onPress={btnClick} style={stlCongsPoppup.button}>
@@ -34,21 +32,26 @@ const stlCongsPoppup = StyleSheet.create({
   wrapper: {
     justifyContent: "center",
     alignItems: "center",
-    padding: 10,
+    padding: 16,
     width: "100%",
     flexDirection: "column",
+  },
+  icon: {
+    marginTop: 12,
   },
   container: {
     backgroundColor: "white",
     flexDirection: "column",
     alignItems: "flex-start",
-    padding: 16,
-    shadowColor: "rgba(0,0,0,0.15)",
-    shadowOffset: { width: 4, height: 1 },
-    shadowOpacity: 0.15,
-    shadowRadius: 1,
     borderRadius: 16,
     shadowColor: "#000",
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+    shadowOpacity: 0.4,
+    shadowRadius: 3.84,
+    elevation: 5,
     width: "100%",
   },
   header: {
@@ -56,10 +59,11 @@ const stlCongsPoppup = StyleSheet.create({
     fontStyle: "normal",
     fontSize: 20,
     lineHeight: 28,
+    marginTop: 17.45,
   },
   content: {
     textAlign: "center",
-    marginTop: 10,
+    marginTop: 16,
     fontFamily: "QuicksandMedium",
     fontStyle: "normal",
     fontSize: 14,
@@ -69,7 +73,7 @@ const stlCongsPoppup = StyleSheet.create({
     width: "100%",
     justifyContent: "center",
     alignItems: "center",
-    marginTop: 10,
+    marginTop: 32,
   },
   button: {
     textAlign: "center",

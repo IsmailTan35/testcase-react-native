@@ -36,7 +36,7 @@ const stlIntroPoppup = StyleSheet.create({
   wrapper: {
     justifyContent: "center",
     alignItems: "center",
-    padding: 10,
+    padding: 16,
     width: "100%",
     flexDirection: "column",
   },
@@ -44,14 +44,15 @@ const stlIntroPoppup = StyleSheet.create({
     backgroundColor: "white",
     flexDirection: "column",
     alignItems: "flex-start",
-    padding: 16,
-    shadowColor: "rgba(0,0,0,0.15)",
-    shadowOffset: { width: 4, height: 1 },
-    shadowOpacity: 0.15,
-    shadowRadius: 1,
     borderRadius: 16,
     shadowColor: "#000",
-
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+    shadowOpacity: 0.4,
+    shadowRadius: 3.84,
+    elevation: 5,
     width: "100%",
   },
   header: {
@@ -62,7 +63,7 @@ const stlIntroPoppup = StyleSheet.create({
   },
   content: {
     textAlign: "center",
-    marginTop: 10,
+    marginTop: 16,
     fontFamily: "QuicksandMedium",
     fontStyle: "normal",
     fontSize: 14,
@@ -72,7 +73,7 @@ const stlIntroPoppup = StyleSheet.create({
     width: "100%",
     justifyContent: "center",
     alignItems: "center",
-    marginTop: 10,
+    marginTop: 32,
   },
   button: {
     textAlign: "center",

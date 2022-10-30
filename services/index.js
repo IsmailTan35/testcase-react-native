@@ -2,7 +2,7 @@ function countDivider(count) {
   if (!count) return 0;
   const fixed = parseInt(count.toString());
   if (!fixed) return 0;
-  const dividedCount = fixed.toLocaleString("en-US");
+  const dividedCount = fixed.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
   return dividedCount;
 }
 
